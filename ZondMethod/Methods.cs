@@ -10,7 +10,7 @@ namespace Lab.ZondMethod
 {
     public static class Methods
     {
-        public static List<Points> list  = new List<Points>();
+        public static HashSet<Points> list  = new HashSet<Points>();
         public static Dictionary<int, List<Points>> FindZond(int height, int width, int[,] mass)
         {
             
@@ -35,7 +35,7 @@ namespace Lab.ZondMethod
                     }
                 }
             }
-
+           
             int fg;
             return null;
         }
@@ -75,14 +75,7 @@ namespace Lab.ZondMethod
                 corx = j - 1;
                 Rec(tempMass, cory, corx);
             }
-            else if (tempMass[i, j] == 1)
-            {
-                list.Add(new Points { Y = i, X = j });
-                tempMass[i, j] = 0;
-                cory = i;
-                corx = j;
-                Rec(tempMass, cory, corx);
-            }
+           
             else if (tempMass[i, j + 1] == 1)
             {
                 list.Add(new Points { Y = i, X = j + 1});
@@ -116,6 +109,7 @@ namespace Lab.ZondMethod
                 Rec(tempMass, cory, corx);
             }
 
+            tempMass[i, j] = 0;
             return 1;
         }
         
