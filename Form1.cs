@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lab.ZondMethod;
 
 namespace Lab
 {
@@ -15,6 +16,11 @@ namespace Lab
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void zondMethodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ZondForm().Show();
         }
     }
 }
