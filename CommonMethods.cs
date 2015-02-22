@@ -40,22 +40,22 @@ namespace Lab
         }
 
         //read px binary image
-        public static double[,] ReadData(Bitmap map)
+        public static int[,] ReadData(Bitmap map)
         {
-            var mass = new double[map.Height, map.Width];
+            var mass = new int[map.Height, map.Width];
             for (int i = 0; i < map.Height; i++)
             {
                 for (int j = 0; j < map.Width; j++)
                 {
                     Color srcPixel = map.GetPixel(j, i);
-                    mass[i, j] = srcPixel.GetBrightness();
+                    mass[i, j] = (int) srcPixel.GetBrightness();
                     if (mass[i, j] == 0)
                     {
-                        mass[i, j] = 1.0;
+                        mass[i, j] = 1;
                     }
                     else
                     {
-                        mass[i, j] = 0.0;
+                        mass[i, j] = 0;
 
                     }
                 }
@@ -64,7 +64,7 @@ namespace Lab
             return mass;
         }
 
-        public static void FillGrid(Bitmap map, double[,] mass, DataGridView grid)
+        public static void FillGrid(Bitmap map, int[,] mass, DataGridView grid)
         {
             grid.Rows.Clear();
             grid.ColumnCount = map.Width;

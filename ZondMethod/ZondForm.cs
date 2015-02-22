@@ -14,7 +14,7 @@ namespace Lab.ZondMethod
     public partial class ZondForm : Form
     {
         private Bitmap _map;
-        private double[,] initialMass;
+        private int[,] initialMass;
 
         public ZondForm()
         {
@@ -34,7 +34,7 @@ namespace Lab.ZondMethod
 
         private void ResizeButton_Click(object sender, EventArgs e)
         {
-            
+            Methods.FindZond(_map.Height, _map.Width, initialMass);
         }
 
 
