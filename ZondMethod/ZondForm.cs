@@ -37,6 +37,8 @@ namespace Lab.ZondMethod
             Methods.FindZond(_map.Height, _map.Width, initialMass);
         }
 
+       
+
 
     }
 }
