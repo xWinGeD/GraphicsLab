@@ -34,7 +34,7 @@ namespace Lab
             saveImage.ShowDialog();
             map.Save(saveImage.FileName);
 
-            box.SizeMode = PictureBoxSizeMode.Normal;
+            box.SizeMode = PictureBoxSizeMode.StretchImage;
             box.ImageLocation = saveImage.FileName;
 
         }

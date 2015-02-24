@@ -36,24 +36,24 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.OpenImageButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.CutButton = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.ThinningButton = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.FindZondButton = new System.Windows.Forms.Button();
+            this.ThinningButton = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.CutButton = new System.Windows.Forms.Button();
+            this.ImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.OpenImageButton = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CompareButton = new System.Windows.Forms.Button();
+            this.FindZondButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -112,7 +112,7 @@
             this.tabPage1.Controls.Add(this.ThinningButton);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.CutButton);
-            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Controls.Add(this.ImagePictureBox);
             this.tabPage1.Controls.Add(this.OpenImageButton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -121,6 +121,59 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(168, 326);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(217, 166);
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
+            // ThinningButton
+            // 
+            this.ThinningButton.Location = new System.Drawing.Point(36, 403);
+            this.ThinningButton.Name = "ThinningButton";
+            this.ThinningButton.Size = new System.Drawing.Size(75, 23);
+            this.ThinningButton.TabIndex = 4;
+            this.ThinningButton.Text = "Thinning";
+            this.ThinningButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(168, 167);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(217, 153);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // CutButton
+            // 
+            this.CutButton.Location = new System.Drawing.Point(25, 233);
+            this.CutButton.Name = "CutButton";
+            this.CutButton.Size = new System.Drawing.Size(108, 23);
+            this.CutButton.TabIndex = 2;
+            this.CutButton.Text = "Cut and Scaling ";
+            this.CutButton.UseVisualStyleBackColor = true;
+            this.CutButton.Click += new System.EventHandler(this.CutButton_Click);
+            // 
+            // ImagePictureBox
+            // 
+            this.ImagePictureBox.Location = new System.Drawing.Point(168, 9);
+            this.ImagePictureBox.Name = "ImagePictureBox";
+            this.ImagePictureBox.Size = new System.Drawing.Size(217, 152);
+            this.ImagePictureBox.TabIndex = 1;
+            this.ImagePictureBox.TabStop = false;
+            // 
+            // OpenImageButton
+            // 
+            this.OpenImageButton.Location = new System.Drawing.Point(36, 66);
+            this.OpenImageButton.Name = "OpenImageButton";
+            this.OpenImageButton.Size = new System.Drawing.Size(75, 23);
+            this.OpenImageButton.TabIndex = 0;
+            this.OpenImageButton.Text = "OpenImage";
+            this.OpenImageButton.UseVisualStyleBackColor = true;
+            this.OpenImageButton.Click += new System.EventHandler(this.OpenImageButton_Click);
             // 
             // tabPage2
             // 
@@ -135,65 +188,14 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // OpenImageButton
+            // CompareButton
             // 
-            this.OpenImageButton.Location = new System.Drawing.Point(36, 66);
-            this.OpenImageButton.Name = "OpenImageButton";
-            this.OpenImageButton.Size = new System.Drawing.Size(75, 23);
-            this.OpenImageButton.TabIndex = 0;
-            this.OpenImageButton.Text = "OpenImage";
-            this.OpenImageButton.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(168, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(217, 152);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // CutButton
-            // 
-            this.CutButton.Location = new System.Drawing.Point(36, 234);
-            this.CutButton.Name = "CutButton";
-            this.CutButton.Size = new System.Drawing.Size(75, 23);
-            this.CutButton.TabIndex = 2;
-            this.CutButton.Text = "Cut and Scaling ";
-            this.CutButton.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(168, 167);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(217, 153);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // ThinningButton
-            // 
-            this.ThinningButton.Location = new System.Drawing.Point(36, 403);
-            this.ThinningButton.Name = "ThinningButton";
-            this.ThinningButton.Size = new System.Drawing.Size(75, 23);
-            this.ThinningButton.TabIndex = 4;
-            this.ThinningButton.Text = "Thinning";
-            this.ThinningButton.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(168, 326);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(217, 166);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(338, 40);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 29);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.CompareButton.Location = new System.Drawing.Point(188, 41);
+            this.CompareButton.Name = "CompareButton";
+            this.CompareButton.Size = new System.Drawing.Size(75, 28);
+            this.CompareButton.TabIndex = 3;
+            this.CompareButton.Text = "Compare";
+            this.CompareButton.UseVisualStyleBackColor = true;
             // 
             // FindZondButton
             // 
@@ -204,14 +206,14 @@
             this.FindZondButton.Text = "Find_Zond";
             this.FindZondButton.UseVisualStyleBackColor = true;
             // 
-            // CompareButton
+            // AddButton
             // 
-            this.CompareButton.Location = new System.Drawing.Point(188, 41);
-            this.CompareButton.Name = "CompareButton";
-            this.CompareButton.Size = new System.Drawing.Size(75, 28);
-            this.CompareButton.TabIndex = 3;
-            this.CompareButton.Text = "Compare";
-            this.CompareButton.UseVisualStyleBackColor = true;
+            this.AddButton.Location = new System.Drawing.Point(338, 40);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(75, 29);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
             // 
             // ZondForm
             // 
@@ -229,10 +231,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -252,7 +254,7 @@
         private System.Windows.Forms.Button ThinningButton;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button CutButton;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox ImagePictureBox;
         private System.Windows.Forms.Button OpenImageButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button FindZondButton;

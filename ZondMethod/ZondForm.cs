@@ -13,7 +13,7 @@ namespace Lab.ZondMethod
 {
     public partial class ZondForm : Form
     {
-        private Bitmap _map;
+        private Bitmap _mapZond,_mapImage;
         private int[,] initialMass;
 
         public ZondForm()
@@ -23,18 +23,32 @@ namespace Lab.ZondMethod
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            _map = CommonMethods.OpenFile(pictureBox1);
+            _mapZond = CommonMethods.OpenFile(pictureBox1);
         }
 
         private void BuildMatrix_Click(object sender, EventArgs e)
         {
-            initialMass = CommonMethods.ReadData(_map);
-            CommonMethods.FillGrid(_map,initialMass,dataGridView1);
+            initialMass = CommonMethods.ReadData(_mapZond);
+            CommonMethods.FillGrid(_mapZond,initialMass,dataGridView1);
         }
 
         private void ResizeButton_Click(object sender, EventArgs e)
         {
-            Methods.FindZond(_map.Height, _map.Width, initialMass);
+            Methods.FindZond(_mapZond.Height, _mapZond.Width, initialMass);
+        }
+
+        private void OpenImageButton_Click(object sender, EventArgs e)
+        {
+            _mapImage = CommonMethods.OpenFile(ImagePictureBox);
+        }
+
+        private void CutButton_Click(object sender, EventArgs e)
+        {
+            int[,] mass;
+            mass = CommonMethods.ReadData(_mapImage);
+            CommonMethods.FillGrid(_mapImage,mass,dataGridView1);
+            _mapImage = Methods.CutAndScalling(mass,_mapImage.Height,_mapImage.Width);
+            CommonMethods.SaveAndShow(_mapImage,pictureBox3);
         }
 
        

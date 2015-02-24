@@ -116,6 +116,58 @@ namespace Lab.ZondMethod
             tempMass[i, j] = 0;
             return 1;
         }
+
+        public static Bitmap CutAndScalling(int[,] mass,int height, int width)
+        {
+            //find parts image
+           var listW = new List<Points>();
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    if (mass[i, j] == 1)
+                    {
+                        listW.Add(new Points { X = j, Y = i });
+                    }          
+                }
+            }
+            var temp = listW.Min(t => t.X);
+            var minW = listW.First(t => t.X == temp);
+             temp = listW.Max(t => t.X);
+            var maxW = listW.First(t => t.X == temp);
+
+             temp = listW.Min(t => t.Y);
+            var minH = listW.First(t => t.Y == temp);
+             temp = listW.Max(t => t.Y);
+            var maxH = listW.First(t => t.Y == temp);
+
+            //cut
+            int x = 0, y = -1;
+            var map = new Bitmap((maxW.X - minW.X) + 1, (maxH.Y - minH.Y) + 1);
+            for (int i = 0; i < height; i++)
+            {
+                if (i >= minH.Y && i <= maxH.Y)
+                {
+                    y++;
+                    x = 0;
+                }
+                    
+                for (int j = 0; j < width; j++)
+                {
+                    if (i >= minH.Y && i <= maxH.Y && j >= minW.X && j<= maxW.X)
+                    {
+                        map.SetPixel(x, y, mass[i, j] == 1 ? Color.Black : Color.White);
+                        x++;
+                    }
+                }
+            }
+            
+            //scaling
+            var finalMap = new Bitmap(map, new Size(50,50));
+            return finalMap;
+
+
+        }
         
     }
 }
