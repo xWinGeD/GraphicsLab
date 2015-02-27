@@ -34,29 +34,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BuildMatrix = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.ThinningButton = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.CutButton = new System.Windows.Forms.Button();
-            this.ImagePictureBox = new System.Windows.Forms.PictureBox();
-            this.OpenImageButton = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.CompareButton = new System.Windows.Forms.Button();
-            this.FindZondButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.OpenImageBtn = new System.Windows.Forms.Button();
+            this.CutAndScalingBtn = new System.Windows.Forms.Button();
+            this.ResultBtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -75,15 +61,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(66, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 43);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 206);
+            this.pictureBox1.Size = new System.Drawing.Size(206, 146);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // BuildMatrix
             // 
-            this.BuildMatrix.Location = new System.Drawing.Point(145, 253);
+            this.BuildMatrix.Location = new System.Drawing.Point(160, 207);
             this.BuildMatrix.Name = "BuildMatrix";
             this.BuildMatrix.Size = new System.Drawing.Size(75, 23);
             this.BuildMatrix.TabIndex = 2;
@@ -94,134 +80,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 282);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(340, 258);
             this.dataGridView1.TabIndex = 3;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(418, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(473, 524);
-            this.tabControl1.TabIndex = 8;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.pictureBox4);
-            this.tabPage1.Controls.Add(this.ThinningButton);
-            this.tabPage1.Controls.Add(this.pictureBox3);
-            this.tabPage1.Controls.Add(this.CutButton);
-            this.tabPage1.Controls.Add(this.ImagePictureBox);
-            this.tabPage1.Controls.Add(this.OpenImageButton);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(465, 498);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(168, 326);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(217, 166);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
-            // ThinningButton
-            // 
-            this.ThinningButton.Location = new System.Drawing.Point(36, 403);
-            this.ThinningButton.Name = "ThinningButton";
-            this.ThinningButton.Size = new System.Drawing.Size(75, 23);
-            this.ThinningButton.TabIndex = 4;
-            this.ThinningButton.Text = "Thinning";
-            this.ThinningButton.UseVisualStyleBackColor = true;
-            this.ThinningButton.Click += new System.EventHandler(this.ThinningButton_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(168, 167);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(217, 153);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // CutButton
-            // 
-            this.CutButton.Location = new System.Drawing.Point(25, 233);
-            this.CutButton.Name = "CutButton";
-            this.CutButton.Size = new System.Drawing.Size(108, 23);
-            this.CutButton.TabIndex = 2;
-            this.CutButton.Text = "Cut and Scaling ";
-            this.CutButton.UseVisualStyleBackColor = true;
-            this.CutButton.Click += new System.EventHandler(this.CutButton_Click);
-            // 
-            // ImagePictureBox
-            // 
-            this.ImagePictureBox.Location = new System.Drawing.Point(168, 9);
-            this.ImagePictureBox.Name = "ImagePictureBox";
-            this.ImagePictureBox.Size = new System.Drawing.Size(217, 152);
-            this.ImagePictureBox.TabIndex = 1;
-            this.ImagePictureBox.TabStop = false;
-            // 
-            // OpenImageButton
-            // 
-            this.OpenImageButton.Location = new System.Drawing.Point(36, 66);
-            this.OpenImageButton.Name = "OpenImageButton";
-            this.OpenImageButton.Size = new System.Drawing.Size(75, 23);
-            this.OpenImageButton.TabIndex = 0;
-            this.OpenImageButton.Text = "OpenImage";
-            this.OpenImageButton.UseVisualStyleBackColor = true;
-            this.OpenImageButton.Click += new System.EventHandler(this.OpenImageButton_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.CompareButton);
-            this.tabPage2.Controls.Add(this.FindZondButton);
-            this.tabPage2.Controls.Add(this.AddButton);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(465, 498);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // CompareButton
-            // 
-            this.CompareButton.Location = new System.Drawing.Point(188, 41);
-            this.CompareButton.Name = "CompareButton";
-            this.CompareButton.Size = new System.Drawing.Size(75, 28);
-            this.CompareButton.TabIndex = 3;
-            this.CompareButton.Text = "Compare";
-            this.CompareButton.UseVisualStyleBackColor = true;
-            // 
-            // FindZondButton
-            // 
-            this.FindZondButton.Location = new System.Drawing.Point(37, 41);
-            this.FindZondButton.Name = "FindZondButton";
-            this.FindZondButton.Size = new System.Drawing.Size(75, 28);
-            this.FindZondButton.TabIndex = 2;
-            this.FindZondButton.Text = "Find_Zond";
-            this.FindZondButton.UseVisualStyleBackColor = true;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(338, 40);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 29);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1052, 334);
+            this.textBox1.Location = new System.Drawing.Point(480, 128);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 7;
@@ -229,30 +95,61 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1008, 337);
+            this.label1.Location = new System.Drawing.Point(436, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Porog:";
             // 
-            // button2
+            // OpenImageBtn
             // 
-            this.button2.Location = new System.Drawing.Point(1052, 282);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "global_jpg";
-            this.button2.UseVisualStyleBackColor = true;
+            this.OpenImageBtn.Location = new System.Drawing.Point(480, 11);
+            this.OpenImageBtn.Name = "OpenImageBtn";
+            this.OpenImageBtn.Size = new System.Drawing.Size(97, 23);
+            this.OpenImageBtn.TabIndex = 11;
+            this.OpenImageBtn.Text = "OpenImage";
+            this.OpenImageBtn.UseVisualStyleBackColor = true;
+            this.OpenImageBtn.Click += new System.EventHandler(this.OpenImageBtn_Click);
+            // 
+            // CutAndScalingBtn
+            // 
+            this.CutAndScalingBtn.Location = new System.Drawing.Point(480, 74);
+            this.CutAndScalingBtn.Name = "CutAndScalingBtn";
+            this.CutAndScalingBtn.Size = new System.Drawing.Size(97, 23);
+            this.CutAndScalingBtn.TabIndex = 12;
+            this.CutAndScalingBtn.Text = "CutAndScaling";
+            this.CutAndScalingBtn.UseVisualStyleBackColor = true;
+            this.CutAndScalingBtn.Click += new System.EventHandler(this.CutAndScalingBtn_Click);
+            // 
+            // ResultBtn
+            // 
+            this.ResultBtn.Location = new System.Drawing.Point(480, 166);
+            this.ResultBtn.Name = "ResultBtn";
+            this.ResultBtn.Size = new System.Drawing.Size(97, 23);
+            this.ResultBtn.TabIndex = 13;
+            this.ResultBtn.Text = "Result";
+            this.ResultBtn.UseVisualStyleBackColor = true;
+            this.ResultBtn.Click += new System.EventHandler(this.ResultBtn_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(437, 218);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(200, 163);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
             // 
             // ZondForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 548);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.ResultBtn);
+            this.Controls.Add(this.CutAndScalingBtn);
+            this.Controls.Add(this.OpenImageBtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BuildMatrix);
             this.Controls.Add(this.pictureBox1);
@@ -261,12 +158,7 @@
             this.Text = "ZondForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,20 +172,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BuildMatrix;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button ThinningButton;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button CutButton;
-        private System.Windows.Forms.PictureBox ImagePictureBox;
-        private System.Windows.Forms.Button OpenImageButton;
-        private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button FindZondButton;
-        private System.Windows.Forms.Button CompareButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button OpenImageBtn;
+        private System.Windows.Forms.Button CutAndScalingBtn;
+        private System.Windows.Forms.Button ResultBtn;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

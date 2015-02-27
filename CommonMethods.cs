@@ -72,8 +72,7 @@ namespace Lab
             {
                 for (int j = 0; j < map.Width; j++)
                 {
-                    Color srcPixel = map.GetPixel(j, i);
-                    mass[i, j] = srcPixel.B;
+                    mass[i, j] = map.GetPixel(j, i).R;
                 }
             }
             return mass;
