@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using AForge;
+using AForge.Imaging.Filters;
+using ImageResizer;
 
 namespace Lab.ZondMethod
 {
@@ -42,7 +46,7 @@ namespace Lab.ZondMethod
            
             return dictionary;
         }
-
+        
         public static int Rec(int[,] tempMass, int i, int j)
         {
             int corx, cory;
@@ -116,11 +120,12 @@ namespace Lab.ZondMethod
             tempMass[i, j] = 0;
             return 1;
         }
-
+        //cut image and scalling it
         public static Bitmap CutAndScalling(int[,] mass,int height, int width)
         {
             //find parts image
            var listW = new List<Points>();
+
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
@@ -143,7 +148,9 @@ namespace Lab.ZondMethod
 
             //cut
             int x = 0, y = -1;
+
             var map = new Bitmap((maxW.X - minW.X) + 1, (maxH.Y - minH.Y) + 1);
+
             for (int i = 0; i < height; i++)
             {
                 if (i >= minH.Y && i <= maxH.Y)
@@ -163,11 +170,13 @@ namespace Lab.ZondMethod
             }
             
             //scaling
-            var finalMap = new Bitmap(map, new Size(50,50));
-            return finalMap;
 
+           var k = new ResizeNearestNeighbor(50, 50);
+           var p = k.Apply(map);
 
+           return p;
         }
+       
         
     }
 }

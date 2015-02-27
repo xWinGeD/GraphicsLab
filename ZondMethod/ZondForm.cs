@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge.Imaging.Filters;
+using ImageResizer;
 
 namespace Lab.ZondMethod
 {
     public partial class ZondForm : Form
     {
         private Bitmap _mapZond,_mapImage;
-        private int[,] initialMass;
+        private int[,] zondMass,imageMass;
 
         public ZondForm()
         {
@@ -24,17 +20,15 @@ namespace Lab.ZondMethod
         private void OpenButton_Click(object sender, EventArgs e)
         {
             _mapZond = CommonMethods.OpenFile(pictureBox1);
+            
         }
 
         private void BuildMatrix_Click(object sender, EventArgs e)
         {
-            initialMass = CommonMethods.ReadData(_mapZond);
-            CommonMethods.FillGrid(_mapZond,initialMass,dataGridView1);
-        }
-
-        private void ResizeButton_Click(object sender, EventArgs e)
-        {
-            Methods.FindZond(_mapZond.Height, _mapZond.Width, initialMass);
+            zondMass = CommonMethods.ReadData(_mapZond);
+            // zondMass = CommonMethods.ReadData(_mapZond,true);
+            // zondMass = Methods.Binarization(_mapZond, initialMass, 128);
+            CommonMethods.FillGrid(_mapZond, zondMass, dataGridView1);
         }
 
         private void OpenImageButton_Click(object sender, EventArgs e)
@@ -50,6 +44,22 @@ namespace Lab.ZondMethod
             _mapImage = Methods.CutAndScalling(mass,_mapImage.Height,_mapImage.Width);
             CommonMethods.SaveAndShow(_mapImage,pictureBox3);
         }
+
+        private void ThinningButton_Click(object sender, EventArgs e)
+        {
+            int[,] finalMass;
+            imageMass = CommonMethods.ReadData(_mapImage);
+            var skelet = new Skeletonizator(imageMass);
+            finalMass = skelet.SkeletonZhangSuen();
+
+            var map = CommonMethods.FilBitmap(finalMass, _mapImage.Height, _mapImage.Width);
+            CommonMethods.SaveAndShow(map, pictureBox4);
+            CommonMethods.FillGrid(map, imageMass, dataGridView1);
+        }
+
+       
+
+        
 
        
 

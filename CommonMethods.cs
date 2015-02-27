@@ -47,6 +47,7 @@ namespace Lab
             {
                 for (int j = 0; j < map.Width; j++)
                 {
+                    
                     Color srcPixel = map.GetPixel(j, i);
                     mass[i, j] = (int) srcPixel.GetBrightness();
                     if (mass[i, j] == 0)
@@ -61,6 +62,20 @@ namespace Lab
                 }
             }
 
+            return mass;
+        }
+        //read shadding image
+        public static int[,] ReadData(Bitmap map, bool s)
+        {
+            var mass = new int[map.Height, map.Width];
+            for (int i = 0; i < map.Height; i++)
+            {
+                for (int j = 0; j < map.Width; j++)
+                {
+                    Color srcPixel = map.GetPixel(j, i);
+                    mass[i, j] = srcPixel.B;
+                }
+            }
             return mass;
         }
 
@@ -87,6 +102,19 @@ namespace Lab
                     grid.Rows[i].Cells[j].Value = mass[i, j];
                 }
             }
+        }
+
+        public static Bitmap FilBitmap(int[,] temp, int height, int width)
+        {
+            var map = new Bitmap(width,height);
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    map.SetPixel(j, i, temp[i, j] == 1 ? Color.Black : Color.White);
+                }
+            }
+            return map;
         }
 
     }
