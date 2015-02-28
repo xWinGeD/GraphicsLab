@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Windows.Forms;
-using AForge.Imaging.Filters;
-using ImageResizer;
-using Lab.ZondMethod.Data;
 using Lab.ZondMethod.ShowMetods;
 
 namespace Lab.ZondMethod
@@ -25,7 +21,7 @@ namespace Lab.ZondMethod
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            _mapZond = CommonMethods.OpenFile(pictureBox1, out fileName);  
+            _mapZond = CommonMethods.OpenFile(pictureBox1);  
         }
 
         private void BuildMatrix_Click(object sender, EventArgs e)
@@ -44,7 +40,7 @@ namespace Lab.ZondMethod
 
         private void OpenImageBtn_Click(object sender, EventArgs e)
         {
-            _mapImage = CommonMethods.OpenFile(pictureBox2);
+            _mapImage = CommonMethods.OpenFile(pictureBox2,out fileName);
         }
 
         private void CutAndScalingBtn_Click(object sender, EventArgs e)

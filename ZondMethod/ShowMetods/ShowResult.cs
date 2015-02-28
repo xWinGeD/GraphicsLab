@@ -13,18 +13,19 @@ namespace Lab.ZondMethod.ShowMetods
         private static int count = 0;
         public static void BuildGrid(int zondCount, DataGridView grid)
         {
-            grid.Rows.Clear();
+            //grid.Rows.Clear();
             grid.ColumnCount = zondCount + 3;//кол-во зондов + имя файла + результат + класс изображения
 
             for (int i = 0; i < grid.ColumnCount; i++)
             {
                 grid.Columns[i].Width = 90;
             }
+            grid.Rows[0].Cells[0].Value = "FileName";
+            for (int i = 1; i <= zondCount; i++)
+            {
+                grid.Rows[0].Cells[i].Value = i;
+            }
 
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    grid.Rows.Add();
-            //}
         }
 
         public static void AddResultToGrid(string fileName,Dictionary<int, int> compareResult, DataGridView grid)
