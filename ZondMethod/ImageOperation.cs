@@ -44,12 +44,11 @@ namespace Lab.ZondMethod
             //cut
             int x = 0, y = -1;
 
-            //var map = new Bitmap((maxW.X - minW.X) + 1, (maxH.Y - minH.Y) + 1);
-            var map = new Bitmap((maxW.X - minW.X) + 1, (maxH.Y - minH.Y) + 1);
+            var map = new Bitmap((maxW.X - minW.X) + 3, (maxH.Y - minH.Y) + 3,PixelFormat.Format24bppRgb);
 
             for (int i = 0; i < height; i++)
             {
-                if (i >= minH.Y && i <= maxH.Y)
+                if (i >= minH.Y - 1 && i <= maxH.Y + 1)
                 {
                     y++;
                     x = 0;
@@ -57,32 +56,23 @@ namespace Lab.ZondMethod
                     
                 for (int j = 0; j < width; j++)
                 {
-                    if (i >= minH.Y && i <= maxH.Y && j >= minW.X && j<= maxW.X)
+                    if (i >= minH.Y - 1  && i <= maxH.Y + 1  && j >= minW.X - 1 && j<= maxW.X + 1)
                     {
                         map.SetPixel(x, y, mass[i, j] == 1 ? Color.Black : Color.White);
                         x++;
                     }
                 }
             }
-            
+           
            return map;
         }
 
         //scaling image
-        public static Bitmap ScaleImage(Bitmap map)
+        public static Bitmap ScaleImage(Bitmap mmap)
         {
-            var settings = new ResizeSettings
-            {
-                Height = 50,
-                Width = 50,
-                Mode = FitMode.Pad,
-                Format = "jpg",
-                Scale = ScaleMode.Both,
-                Quality = 100,
-            };
-
-            var scalingImage = ImageBuilder.Current.Build(map, settings);
-            return scalingImage;
+            var obj = new ResizeNearestNeighbor(50, 50);
+            var result = obj.Apply(mmap);
+            return result;
         }
        
         

@@ -38,17 +38,13 @@ namespace Lab.ZondMethod
         {
             imageMass = CommonMethods.ReadData(_mapImage);
             var cutImage = ImageOperation.CutImage(imageMass, _mapImage.Height, _mapImage.Width);
-            cutImage.Save(@"E:\imga.bmp");
-            _mapImage = ImageOperation.ScaleImage(cutImage);
-            //_mapImage.Save(@"E:\img.jpg");
+           _mapImage = ImageOperation.ScaleImage(cutImage);
         }
 
         private void ResultBtn_Click(object sender, EventArgs e)
         {
-            var scaleImageMass = CommonMethods.ReadData(_mapImage, true);
-            var treshold = Convert.ToInt32(textBox1.Text);
-            var binarizationMass = MassOperation.GlobalMethod(_mapImage, scaleImageMass, treshold);
-            var skeletObj = new Skeletonizator(binarizationMass);
+            var scaleImageMass = CommonMethods.ReadData(_mapImage);
+            var skeletObj = new Skeletonizator(scaleImageMass);
             var thiningMass = skeletObj.SkeletonZhangSuen();
             var map = CommonMethods.FilBitmap(thiningMass, _mapImage.Height, _mapImage.Width);
             CommonMethods.SaveAndShow(map, pictureBox2);

@@ -34,8 +34,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BuildMatrix = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.OpenImageBtn = new System.Windows.Forms.Button();
             this.CutAndScalingBtn = new System.Windows.Forms.Button();
             this.ResultBtn = new System.Windows.Forms.Button();
@@ -85,22 +83,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(340, 258);
             this.dataGridView1.TabIndex = 3;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(480, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(436, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Porog:";
-            // 
             // OpenImageBtn
             // 
             this.OpenImageBtn.Location = new System.Drawing.Point(480, 11);
@@ -123,7 +105,7 @@
             // 
             // ResultBtn
             // 
-            this.ResultBtn.Location = new System.Drawing.Point(480, 166);
+            this.ResultBtn.Location = new System.Drawing.Point(480, 128);
             this.ResultBtn.Name = "ResultBtn";
             this.ResultBtn.Size = new System.Drawing.Size(97, 23);
             this.ResultBtn.TabIndex = 13;
@@ -133,7 +115,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(437, 218);
+            this.pictureBox2.Location = new System.Drawing.Point(442, 177);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 163);
             this.pictureBox2.TabIndex = 14;
@@ -148,8 +130,6 @@
             this.Controls.Add(this.ResultBtn);
             this.Controls.Add(this.CutAndScalingBtn);
             this.Controls.Add(this.OpenImageBtn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BuildMatrix);
             this.Controls.Add(this.pictureBox1);
@@ -160,7 +140,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -172,8 +151,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BuildMatrix;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button OpenImageBtn;
         private System.Windows.Forms.Button CutAndScalingBtn;
         private System.Windows.Forms.Button ResultBtn;
