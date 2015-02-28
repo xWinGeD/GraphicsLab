@@ -38,9 +38,13 @@
             this.CutAndScalingBtn = new System.Windows.Forms.Button();
             this.ResultBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ReadZondBtn = new System.Windows.Forms.Button();
+            this.CompareBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -49,7 +53,7 @@
             // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(145, 12);
+            this.OpenButton.Location = new System.Drawing.Point(95, 11);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(75, 23);
             this.OpenButton.TabIndex = 0;
@@ -59,15 +63,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(87, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(82, 51);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 146);
+            this.pictureBox1.Size = new System.Drawing.Size(264, 163);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // BuildMatrix
             // 
-            this.BuildMatrix.Location = new System.Drawing.Point(160, 207);
+            this.BuildMatrix.Location = new System.Drawing.Point(179, 232);
             this.BuildMatrix.Name = "BuildMatrix";
             this.BuildMatrix.Size = new System.Drawing.Size(75, 23);
             this.BuildMatrix.TabIndex = 2;
@@ -78,7 +82,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 236);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 261);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(340, 258);
             this.dataGridView1.TabIndex = 3;
@@ -121,11 +125,42 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(723, 151);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(529, 260);
+            this.dataGridView2.TabIndex = 15;
+            // 
+            // ReadZondBtn
+            // 
+            this.ReadZondBtn.Location = new System.Drawing.Point(237, 11);
+            this.ReadZondBtn.Name = "ReadZondBtn";
+            this.ReadZondBtn.Size = new System.Drawing.Size(75, 23);
+            this.ReadZondBtn.TabIndex = 16;
+            this.ReadZondBtn.Text = "ReadZond";
+            this.ReadZondBtn.UseVisualStyleBackColor = true;
+            this.ReadZondBtn.Click += new System.EventHandler(this.ReadZondBtn_Click);
+            // 
+            // CompareBtn
+            // 
+            this.CompareBtn.Location = new System.Drawing.Point(829, 93);
+            this.CompareBtn.Name = "CompareBtn";
+            this.CompareBtn.Size = new System.Drawing.Size(127, 23);
+            this.CompareBtn.TabIndex = 17;
+            this.CompareBtn.Text = "CompareComponents";
+            this.CompareBtn.UseVisualStyleBackColor = true;
+            this.CompareBtn.Click += new System.EventHandler(this.CompareBtn_Click);
+            // 
             // ZondForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 548);
+            this.Controls.Add(this.CompareBtn);
+            this.Controls.Add(this.ReadZondBtn);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.ResultBtn);
             this.Controls.Add(this.CutAndScalingBtn);
@@ -139,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +191,8 @@
         private System.Windows.Forms.Button CutAndScalingBtn;
         private System.Windows.Forms.Button ResultBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button ReadZondBtn;
+        private System.Windows.Forms.Button CompareBtn;
     }
 }

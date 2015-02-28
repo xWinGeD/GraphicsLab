@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using AForge.Imaging.Filters;
 using ImageResizer;
+using Lab.ZondMethod.Data;
+using Lab.ZondMethod.ShowMetods;
 
 namespace Lab.ZondMethod
 {
     public partial class ZondForm : Form
     {
         private Bitmap _mapZond,_mapImage;
-        private int[,] zondMass,imageMass;
+        private int[,] zondMass,imageMass,thiningMass;
+        private string fileName;
+        private Dictionary<int, List<Points>> dictionary;
+
 
         public ZondForm()
         {
@@ -19,14 +25,21 @@ namespace Lab.ZondMethod
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            _mapZond = CommonMethods.OpenFile(pictureBox1);
-            
+            _mapZond = CommonMethods.OpenFile(pictureBox1, out fileName);  
         }
 
         private void BuildMatrix_Click(object sender, EventArgs e)
         {
             zondMass = CommonMethods.ReadData(_mapZond);
             CommonMethods.FillGrid(_mapZond, zondMass, dataGridView1);
+           
+        }
+
+        private void ReadZondBtn_Click(object sender, EventArgs e)
+        {
+            zondMass = CommonMethods.ReadData(_mapZond);
+            dictionary = ZondMethods.FindZond(_mapZond.Height, _mapZond.Width, zondMass);
+            ShowResult.BuildGrid(dictionary.Count, dataGridView2);
         }
 
         private void OpenImageBtn_Click(object sender, EventArgs e)
@@ -45,10 +58,24 @@ namespace Lab.ZondMethod
         {
             var scaleImageMass = CommonMethods.ReadData(_mapImage);
             var skeletObj = new Skeletonizator(scaleImageMass);
-            var thiningMass = skeletObj.SkeletonZhangSuen();
+            thiningMass = skeletObj.SkeletonZhangSuen();//change
             var map = CommonMethods.FilBitmap(thiningMass, _mapImage.Height, _mapImage.Width);
             CommonMethods.SaveAndShow(map, pictureBox2);
         }
+
+        private void CompareBtn_Click(object sender, EventArgs e)
+        {
+            Dictionary<int, int> compareResult;//key - zondNumber, value - intersect count
+
+            var imagePointList = thiningMass.BlackPxToList(_mapImage.Height, _mapImage.Width);
+            compareResult = ImageOperation.CompareResult(dictionary,imagePointList);
+            ShowResult.AddResultToGrid(fileName,compareResult,dataGridView2);
+           
+        }
+
+      
+
+       
 
         
 

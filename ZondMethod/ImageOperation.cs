@@ -74,7 +74,24 @@ namespace Lab.ZondMethod
             var result = obj.Apply(mmap);
             return result;
         }
+
+        public static Dictionary<int, int> CompareResult(Dictionary<int, List<Points>> zondDictionary, List<Points> imageList)
+        {
+            var result = new Dictionary<int, int>();
+            IEnumerable<Points> sequence;
+            int key = 1;
+
+            foreach (var temp in zondDictionary)
+            {
+                sequence = temp.Value.Intersect(imageList, new ListComparer());
+                var intersectCount = sequence.Count();
+                result.Add(key,intersectCount);
+                key++;
+            }
+            return result;
+        }
        
-        
     }
+
+    
 }

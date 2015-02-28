@@ -27,6 +27,24 @@ namespace Lab
             }
             return null;
         }
+        public static Bitmap OpenFile(PictureBox box,out string fileName)
+        {
+            var myDialog = new OpenFileDialog();
+
+            if (myDialog.ShowDialog() == DialogResult.OK)
+            {
+                fileName = myDialog.FileName;
+
+                var bm = new Bitmap(fileName, true);
+                box.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                box.ImageLocation = fileName;
+                return bm;
+
+            }
+            fileName = null;
+            return null;
+        }
         
         public static void SaveAndShow(Bitmap map, PictureBox box)
         {
