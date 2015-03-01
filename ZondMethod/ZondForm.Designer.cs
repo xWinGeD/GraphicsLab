@@ -32,8 +32,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.OpenButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BuildMatrix = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.OpenImageBtn = new System.Windows.Forms.Button();
             this.CutAndScalingBtn = new System.Windows.Forms.Button();
             this.ResultBtn = new System.Windows.Forms.Button();
@@ -44,7 +42,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,24 +68,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(282, 163);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // BuildMatrix
-            // 
-            this.BuildMatrix.Location = new System.Drawing.Point(12, 210);
-            this.BuildMatrix.Name = "BuildMatrix";
-            this.BuildMatrix.Size = new System.Drawing.Size(282, 23);
-            this.BuildMatrix.TabIndex = 2;
-            this.BuildMatrix.Text = "BuildMatrix";
-            this.BuildMatrix.UseVisualStyleBackColor = true;
-            this.BuildMatrix.Click += new System.EventHandler(this.BuildMatrix_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(282, 223);
-            this.dataGridView1.TabIndex = 3;
             // 
             // OpenImageBtn
             // 
@@ -182,21 +161,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 548);
+            this.ClientSize = new System.Drawing.Size(1138, 324);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CompareBtn);
             this.Controls.Add(this.ReadZondBtn);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BuildMatrix);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.OpenButton);
             this.Name = "ZondForm";
             this.Text = "ZondForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -211,8 +187,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button BuildMatrix;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button OpenImageBtn;
         private System.Windows.Forms.Button CutAndScalingBtn;
         private System.Windows.Forms.Button ResultBtn;

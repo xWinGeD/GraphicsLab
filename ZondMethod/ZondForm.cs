@@ -26,12 +26,7 @@ namespace Lab.ZondMethod
             _mapZond = CommonMethods.OpenFile(pictureBox1);
         }
 
-        private void BuildMatrix_Click(object sender, EventArgs e)
-        {
-            _zondMass = CommonMethods.ReadData(_mapZond);
-            CommonMethods.FillGrid(_mapZond, _zondMass, dataGridView1);
-
-        }
+        
 
         private void ReadZondBtn_Click(object sender, EventArgs e)
         {
