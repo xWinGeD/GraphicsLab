@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Lab
+namespace Lab.ZondMethod.ShowMetods
 {
     public static class CommonMethods
     {
@@ -42,7 +37,9 @@ namespace Lab
                 return bm;
 
             }
+
             fileName = null;
+
             return null;
         }
         
@@ -61,6 +58,7 @@ namespace Lab
         public static int[,] ReadData(Bitmap map)
         {
             var mass = new int[map.Height, map.Width];
+
             for (int i = 0; i < map.Height; i++)
             {
                 for (int j = 0; j < map.Width; j++)
@@ -68,6 +66,7 @@ namespace Lab
                     
                     Color srcPixel = map.GetPixel(j, i);
                     mass[i, j] = (int) srcPixel.GetBrightness();
+
                     if (mass[i, j] == 0)
                     {
                         mass[i, j] = 1;
@@ -86,6 +85,7 @@ namespace Lab
         public static int[,] ReadData(Bitmap map, bool s)
         {
             var mass = new int[map.Height, map.Width];
+
             for (int i = 0; i < map.Height; i++)
             {
                 for (int j = 0; j < map.Width; j++)
@@ -124,6 +124,7 @@ namespace Lab
         public static Bitmap FilBitmap(int[,] temp, int height, int width)
         {
             var map = new Bitmap(width,height);
+
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
@@ -131,6 +132,7 @@ namespace Lab
                     map.SetPixel(j, i, temp[i, j] == 1 ? Color.Black : Color.White);
                 }
             }
+
             return map;
         }
 

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using Lab.ZondMethod.Data;
 
 namespace Lab.ZondMethod
 {
     public  static class ZondMethods
     {
-        public static int key = 0;
-        public static Dictionary<int, List<Points>> dictionary = new Dictionary<int, List<Points>>();
-        public static List<Points> list;
+        public static int Key = 0;
+        public static Dictionary<int, List<Points>> Dictionary = new Dictionary<int, List<Points>>();
+        public static List<Points> List;
         public static Dictionary<int, List<Points>> FindZond(int height, int width, int[,] mass)
         {
 
@@ -31,15 +27,15 @@ namespace Lab.ZondMethod
                 {
                     if (tempMass[i, j] == 1)
                     {
-                        list = new List<Points> { new Points { Y = i - 1, X = j - 1 } };
+                        List = new List<Points> { new Points { Y = i - 1, X = j - 1 } };
                         Rec(tempMass, i, j);
-                        key++;
-                        dictionary.Add(key, list);
+                        Key++;
+                        Dictionary.Add(Key, List);
                     }
                 }
             }
 
-            return dictionary;
+            return Dictionary;
         }
 
         public static int Rec(int[,] tempMass, int i, int j)
@@ -47,7 +43,7 @@ namespace Lab.ZondMethod
             int corx, cory;
             if (tempMass[i - 1, j - 1] == 1)
             {
-                list.Add(new Points { Y = i - 2, X = j - 2 });
+                List.Add(new Points { Y = i - 2, X = j - 2 });
                 tempMass[i, j] = 0;
                 cory = i - 1;
                 corx = j - 1;
@@ -55,7 +51,7 @@ namespace Lab.ZondMethod
             }
             else if (tempMass[i - 1, j] == 1)
             {
-                list.Add(new Points { Y = i - 2, X = j - 1 });
+                List.Add(new Points { Y = i - 2, X = j - 1 });
                 tempMass[i, j] = 0;
                 cory = i - 1;
                 corx = j;
@@ -63,7 +59,7 @@ namespace Lab.ZondMethod
             }
             else if (tempMass[i - 1, j + 1] == 1)
             {
-                list.Add(new Points { Y = i - 2, X = j });
+                List.Add(new Points { Y = i - 2, X = j });
                 tempMass[i, j] = 0;
                 cory = i - 1;
                 corx = j + 1;
@@ -71,7 +67,7 @@ namespace Lab.ZondMethod
             }
             else if (tempMass[i, j - 1] == 1)
             {
-                list.Add(new Points { Y = i -1 , X = j - 2 });
+                List.Add(new Points { Y = i -1 , X = j - 2 });
                 tempMass[i, j] = 0;
                 cory = i;
                 corx = j - 1;
@@ -80,7 +76,7 @@ namespace Lab.ZondMethod
 
             else if (tempMass[i, j + 1] == 1)
             {
-                list.Add(new Points { Y = i - 1, X = j });
+                List.Add(new Points { Y = i - 1, X = j });
                 tempMass[i, j] = 0;
                 cory = i;
                 corx = j + 1;
@@ -88,7 +84,7 @@ namespace Lab.ZondMethod
             }
             else if (tempMass[i + 1, j - 1] == 1)
             {
-                list.Add(new Points { Y = i, X = j - 2 });
+                List.Add(new Points { Y = i, X = j - 2 });
                 tempMass[i, j] = 0;
                 cory = i + 1;
                 corx = j - 1;
@@ -96,7 +92,7 @@ namespace Lab.ZondMethod
             }
             else if (tempMass[i + 1, j] == 1)
             {
-                list.Add(new Points { Y = i, X = j - 1 });
+                List.Add(new Points { Y = i, X = j - 1 });
                 tempMass[i, j] = 0;
                 cory = i + 1;
                 corx = j;
@@ -104,15 +100,15 @@ namespace Lab.ZondMethod
             }
             else if (tempMass[i + 1, j + 1] == 1)
             {
-                list.Add(new Points { Y = i, X = j });
+                List.Add(new Points { Y = i, X = j });
                 tempMass[i, j] = 0;
                 cory = i + 1;
                 corx = j + 1;
                 Rec(tempMass, cory, corx);
             }
 
-
             tempMass[i, j] = 0;
+
             return 1;
         }
 

@@ -68,7 +68,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ZondMethod\ExtensionInt.cs" />
+    <Compile Include="Extentions\Extensions.cs" />
     <Compile Include="ZondMethod\ImageOperation.cs" />
     <Compile Include="ZondMethod\ListComparer.cs" />
     <Compile Include="ZondMethod\Data\Points.cs" />

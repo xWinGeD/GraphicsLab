@@ -1,51 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
-using AForge.Imaging.Filters;
 
 namespace Lab.ZondMethod.ShowMetods
 {
     public static class ShowResult
     {
-        private static int count = 0;
+        private static int _count = 0;
         public static void BuildGrid(int zondCount, DataGridView grid)
         {
-            //grid.Rows.Clear();
             grid.ColumnCount = zondCount + 3;//кол-во зондов + имя файла + результат + класс изображения
+            grid.ColumnHeadersVisible = true;
+            grid.RowHeadersVisible = false;
+
+            var columnHeaderStyle = new DataGridViewCellStyle
+            {
+                BackColor = Color.Beige,
+                Font = new Font("Verdana", 10, FontStyle.Bold)
+            };
+
+            grid.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
             for (int i = 0; i < grid.ColumnCount; i++)
             {
                 grid.Columns[i].Width = 90;
             }
-            grid.Rows[0].Cells[0].Value = "FileName";
+
+            grid.Columns[0].Name = "FileName";
+
             for (int i = 1; i <= zondCount; i++)
             {
-                grid.Rows[0].Cells[i].Value = i;
+                grid.Columns[i].Name = i.ToString();
             }
 
         }
 
-        public static void AddResultToGrid(string fileName,Dictionary<int, int> compareResult, DataGridView grid)
+        public static void AddResultToGrid(string fileName, Dictionary<int, int> compareResult, DataGridView grid)
         {
-            int intersect;//intersect count
-
-            count++;//для того чтобы записыватьв новую строку
             grid.Rows.Add();
-            for (int i = count; i < grid.RowCount; i++)
+
+            for (int i = _count; i < grid.RowCount; i++)
             {
                 grid.Rows[i].Cells[0].Value = fileName;
+
                 for (int j = 1; j <= compareResult.Count; j++)
                 {
+                    int intersect;//intersect count
                     compareResult.TryGetValue(j, out intersect);
                     grid.Rows[i].Cells[j].Value = intersect;
-                }             
-
+                }
             }
-        }
 
-        
+            _count++;//для того чтобы записывать в новую строку
+        }
     }
 }
