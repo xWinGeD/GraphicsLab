@@ -22,7 +22,7 @@ namespace Lab.ZondMethod.ShowMetods
             }
             return null;
         }
-        public static Bitmap OpenFile(PictureBox box,out string fileName)
+        public static Bitmap OpenFile(PictureBox box, out string fileName)
         {
             var myDialog = new OpenFileDialog();
 
@@ -42,19 +42,18 @@ namespace Lab.ZondMethod.ShowMetods
 
             return null;
         }
-        
+
         public static void SaveAndShow(Bitmap map, PictureBox box)
         {
             var saveImage = new SaveFileDialog { Filter = " bmp files (*.bmp ) | *.bmp | All files (*. * ) | * . * " };
             saveImage.ShowDialog();
             map.Save(saveImage.FileName);
-
             box.SizeMode = PictureBoxSizeMode.StretchImage;
             box.ImageLocation = saveImage.FileName;
 
         }
 
-     
+
 
         //read px binary image
         public static int[,] ReadData(Bitmap map)
@@ -65,9 +64,9 @@ namespace Lab.ZondMethod.ShowMetods
             {
                 for (int j = 0; j < map.Width; j++)
                 {
-                    
+
                     Color srcPixel = map.GetPixel(j, i);
-                    mass[i, j] = (int) srcPixel.GetBrightness();
+                    mass[i, j] = (int)srcPixel.GetBrightness();
 
                     if (mass[i, j] == 0)
                     {
@@ -125,7 +124,7 @@ namespace Lab.ZondMethod.ShowMetods
 
         public static Bitmap FilBitmap(int[,] temp, int height, int width)
         {
-            var map = new Bitmap(width,height);
+            var map = new Bitmap(width, height);
 
             for (int i = 0; i < height; i++)
             {
@@ -139,5 +138,5 @@ namespace Lab.ZondMethod.ShowMetods
         }
 
     }
-    
+
 }

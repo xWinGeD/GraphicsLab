@@ -36,28 +36,33 @@ namespace Lab.ZondMethod
         private void OpenImageBtn_Click(object sender, EventArgs e)
         {
             _mapImage = CommonMethods.OpenFile(pictureBox2, out _fileName);
+
+            if (_mapImage == null)
+            {
+                return;
+            }
+
             //СutAndScaleImage
             _imageMass = CommonMethods.ReadData(_mapImage);
             var cutImage = ImageOperation.CutImage(_imageMass, _mapImage.Height, _mapImage.Width);
             _mapImage = ImageOperation.ScaleImage(cutImage);
+
             //Result
             var scaleImageMass = CommonMethods.ReadData(_mapImage);
             var skeletObj = new Skeletonizator(scaleImageMass);
             _thiningMass = skeletObj.SkeletonZhangSuen();//change
-            var map = CommonMethods.FilBitmap(_thiningMass, _mapImage.Height, _mapImage.Width);
-            //            CommonMethods.SaveAndShow(map, pictureBox2);
-
-            map.SaveToFile("result");
+            Bitmap map = CommonMethods.FilBitmap(_thiningMass, _mapImage.Height, _mapImage.Width);
+                       
+            /*map.SaveToFile("result");*/
+            CommonMethods.SaveAndShow(map,pictureBox2);
 
         }
 
         private void CompareBtn_Click(object sender, EventArgs e)
         {
-            Dictionary<int, int> compareResult;//key - zondNumber, value - intersect count
-
             var imagePointList = _thiningMass.BlackPxToList(_mapImage.Height, _mapImage.Width);
 
-            compareResult = ImageOperation.CompareResult(_dictionary, imagePointList);
+            Dictionary<int, int> compareResult = ImageOperation.CompareResult(_dictionary, imagePointList);
 
             ShowResult.AddResultToGrid(_fileName, compareResult, dataGridView2);
 

@@ -33,23 +33,38 @@ namespace Lab.ZondMethod.ShowMetods
                 grid.Columns[i].Name = i.ToString();
             }
 
+            //TODO Hard
+            grid.Columns[4].Name = "Letter";
+            grid.Columns[5].Name = "Class";
         }
 
         public static void AddResultToGrid(string fileName, Dictionary<int, int> compareResult, DataGridView grid)
         {
             grid.Rows.Add();
 
-            for (int i = _count; i < grid.RowCount; i++)
+            for (var i = _count; i < grid.RowCount; i++)
             {
                 grid.Rows[i].Cells[0].Value = fileName;
 
-                for (int j = 1; j <= compareResult.Count; j++)
+                for (var j = 1; j <= compareResult.Count; j++)
                 {
-                    int intersect;//intersect count
+                    int intersect;  //intersect count
                     compareResult.TryGetValue(j, out intersect);
                     grid.Rows[i].Cells[j].Value = intersect;
                 }
+                var letter = ZondMethods.FindLetter(compareResult);
+
+                foreach (var let in letter)
+                {
+                    grid.Rows[i].Cells[4].Value = @let.Key;
+                    grid.Rows[i].Cells[5].Value = @let.Value;
+                }
+                
             }
+            //TODO HARDCORE
+             
+             
+            
 
             _count++;//для того чтобы записывать в новую строку
         }

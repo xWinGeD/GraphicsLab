@@ -4,7 +4,7 @@ using Lab.ZondMethod.Data;
 
 namespace Lab.Extentions
 {
-    public static class Extensions
+    public static class ListExtensions
     {
         public static List<Points> BlackPxToList(this int[,] mass,int height, int width) 
         {
