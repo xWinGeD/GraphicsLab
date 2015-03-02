@@ -6,7 +6,7 @@ namespace Lab.ZondMethod.ShowMetods
 {
     public static class ShowResult
     {
-        private static int _count = 0;
+        private static int _count;
         public static void BuildGrid(int zondCount, DataGridView grid)
         {
             grid.ColumnCount = zondCount + 3;//кол-во зондов + имя файла + результат + класс изображения

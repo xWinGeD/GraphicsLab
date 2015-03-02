@@ -26,8 +26,6 @@ namespace Lab.ZondMethod
             _mapZond = CommonMethods.OpenFile(pictureBox1);
         }
 
-        
-
         private void ReadZondBtn_Click(object sender, EventArgs e)
         {
             _zondMass = CommonMethods.ReadData(_mapZond);
@@ -38,22 +36,19 @@ namespace Lab.ZondMethod
         private void OpenImageBtn_Click(object sender, EventArgs e)
         {
             _mapImage = CommonMethods.OpenFile(pictureBox2, out _fileName);
-        }
-
-        private void CutAndScalingBtn_Click(object sender, EventArgs e)
-        {
+            //СutAndScaleImage
             _imageMass = CommonMethods.ReadData(_mapImage);
             var cutImage = ImageOperation.CutImage(_imageMass, _mapImage.Height, _mapImage.Width);
             _mapImage = ImageOperation.ScaleImage(cutImage);
-        }
-
-        private void ResultBtn_Click(object sender, EventArgs e)
-        {
+            //Result
             var scaleImageMass = CommonMethods.ReadData(_mapImage);
             var skeletObj = new Skeletonizator(scaleImageMass);
             _thiningMass = skeletObj.SkeletonZhangSuen();//change
             var map = CommonMethods.FilBitmap(_thiningMass, _mapImage.Height, _mapImage.Width);
-            CommonMethods.SaveAndShow(map, pictureBox2);
+            //            CommonMethods.SaveAndShow(map, pictureBox2);
+
+            map.SaveToFile("result");
+
         }
 
         private void CompareBtn_Click(object sender, EventArgs e)

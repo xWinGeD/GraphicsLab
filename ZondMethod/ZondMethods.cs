@@ -3,16 +3,17 @@ using Lab.ZondMethod.Data;
 
 namespace Lab.ZondMethod
 {
-    public  static class ZondMethods
+    public static class ZondMethods
     {
         public static int Key = 0;
-        public static Dictionary<int, List<Points>> Dictionary = new Dictionary<int, List<Points>>();
+        public static Dictionary<int, List<Points>> Dictionary;
         public static List<Points> List;
         public static Dictionary<int, List<Points>> FindZond(int height, int width, int[,] mass)
         {
-
+            Dictionary = new Dictionary<int, List<Points>>();
 
             var tempMass = new int[height + 2, width + 2];
+
             for (int i = 1; i < height + 1; i++)
             {
                 for (int j = 1; j < width + 1; j++)
@@ -41,6 +42,7 @@ namespace Lab.ZondMethod
         public static int Rec(int[,] tempMass, int i, int j)
         {
             int corx, cory;
+
             if (tempMass[i - 1, j - 1] == 1)
             {
                 List.Add(new Points { Y = i - 2, X = j - 2 });
@@ -67,7 +69,7 @@ namespace Lab.ZondMethod
             }
             else if (tempMass[i, j - 1] == 1)
             {
-                List.Add(new Points { Y = i -1 , X = j - 2 });
+                List.Add(new Points { Y = i - 1, X = j - 2 });
                 tempMass[i, j] = 0;
                 cory = i;
                 corx = j - 1;
@@ -111,9 +113,5 @@ namespace Lab.ZondMethod
 
             return 1;
         }
-
-        
-
-        
     }
 }

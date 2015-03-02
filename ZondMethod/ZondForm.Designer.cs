@@ -33,8 +33,6 @@
             this.OpenButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.OpenImageBtn = new System.Windows.Forms.Button();
-            this.CutAndScalingBtn = new System.Windows.Forms.Button();
-            this.ResultBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ReadZondBtn = new System.Windows.Forms.Button();
@@ -71,7 +69,7 @@
             // 
             // OpenImageBtn
             // 
-            this.OpenImageBtn.Location = new System.Drawing.Point(6, 19);
+            this.OpenImageBtn.Location = new System.Drawing.Point(6, 20);
             this.OpenImageBtn.Name = "OpenImageBtn";
             this.OpenImageBtn.Size = new System.Drawing.Size(97, 23);
             this.OpenImageBtn.TabIndex = 11;
@@ -79,29 +77,9 @@
             this.OpenImageBtn.UseVisualStyleBackColor = true;
             this.OpenImageBtn.Click += new System.EventHandler(this.OpenImageBtn_Click);
             // 
-            // CutAndScalingBtn
-            // 
-            this.CutAndScalingBtn.Location = new System.Drawing.Point(6, 48);
-            this.CutAndScalingBtn.Name = "CutAndScalingBtn";
-            this.CutAndScalingBtn.Size = new System.Drawing.Size(97, 23);
-            this.CutAndScalingBtn.TabIndex = 12;
-            this.CutAndScalingBtn.Text = "CutAndScaling";
-            this.CutAndScalingBtn.UseVisualStyleBackColor = true;
-            this.CutAndScalingBtn.Click += new System.EventHandler(this.CutAndScalingBtn_Click);
-            // 
-            // ResultBtn
-            // 
-            this.ResultBtn.Location = new System.Drawing.Point(6, 77);
-            this.ResultBtn.Name = "ResultBtn";
-            this.ResultBtn.Size = new System.Drawing.Size(97, 23);
-            this.ResultBtn.TabIndex = 13;
-            this.ResultBtn.Text = "Result";
-            this.ResultBtn.UseVisualStyleBackColor = true;
-            this.ResultBtn.Click += new System.EventHandler(this.ResultBtn_Click);
-            // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(317, 137);
+            this.pictureBox2.Location = new System.Drawing.Point(300, 74);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 163);
             this.pictureBox2.TabIndex = 14;
@@ -113,7 +91,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(523, 59);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(603, 260);
+            this.dataGridView2.Size = new System.Drawing.Size(603, 180);
             this.dataGridView2.TabIndex = 15;
             // 
             // ReadZondBtn
@@ -139,11 +117,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.OpenImageBtn);
-            this.groupBox1.Controls.Add(this.CutAndScalingBtn);
-            this.groupBox1.Controls.Add(this.ResultBtn);
             this.groupBox1.Location = new System.Drawing.Point(317, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(128, 120);
+            this.groupBox1.Size = new System.Drawing.Size(128, 59);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Working with images";
@@ -161,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 324);
+            this.ClientSize = new System.Drawing.Size(1138, 249);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CompareBtn);
@@ -188,8 +164,6 @@
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button OpenImageBtn;
-        private System.Windows.Forms.Button CutAndScalingBtn;
-        private System.Windows.Forms.Button ResultBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button ReadZondBtn;

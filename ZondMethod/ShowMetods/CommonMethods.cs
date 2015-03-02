@@ -54,6 +54,8 @@ namespace Lab.ZondMethod.ShowMetods
 
         }
 
+     
+
         //read px binary image
         public static int[,] ReadData(Bitmap map)
         {
