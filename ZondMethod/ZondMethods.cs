@@ -117,23 +117,29 @@ namespace Lab.ZondMethod
         public static Dictionary<string, string> FindLetter(Dictionary<int, int> compareDictionary)
         {
             var resultDictionary = new Dictionary<string, string>();
-            if (compareDictionary[1] == 2 && compareDictionary[2] == 1 && compareDictionary[3] == 2)
+            if ((compareDictionary[1] == 0 || compareDictionary[1] == 1) && (compareDictionary[2] >= 1
+                && compareDictionary[2] <= 6) && compareDictionary[3] == 1 || compareDictionary[3] == 2
+                || compareDictionary[3] == 0)
             {
                 resultDictionary.Add("У", "A");
                 return resultDictionary;
             }
-            if (compareDictionary[1] == 2 && compareDictionary[2] == 1 && compareDictionary[3] == 2)
+            if ((compareDictionary[1] >= 5 && compareDictionary[1] >= 13)
+                && (compareDictionary[2] == 2 || compareDictionary[2] == 1)
+                && compareDictionary[3] >= 3 && compareDictionary[3] <= 12)
             {
                 resultDictionary.Add("Х", "B");
                 return resultDictionary;
             }
             if ((compareDictionary[1] == 3 && compareDictionary[2] == 2 && compareDictionary[3] == 1) ||
-                (compareDictionary[1] == 10) || compareDictionary[1] > 10) 
+                (compareDictionary[1] == 10) || compareDictionary[1] > 10)
             {
                 resultDictionary.Add("Ф", "C");
                 return resultDictionary;
             }
+
             resultDictionary.Add("-", "not class");
+
             return resultDictionary;
         }
     }
