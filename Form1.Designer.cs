@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zondMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nearestNeighborToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zondMethodToolStripMenuItem});
+            this.zondMethodToolStripMenuItem,
+            this.nearestNeighborToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -55,9 +57,16 @@
             // zondMethodToolStripMenuItem
             // 
             this.zondMethodToolStripMenuItem.Name = "zondMethodToolStripMenuItem";
-            this.zondMethodToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zondMethodToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.zondMethodToolStripMenuItem.Text = "ZondMethod";
             this.zondMethodToolStripMenuItem.Click += new System.EventHandler(this.zondMethodToolStripMenuItem_Click);
+            // 
+            // nearestNeighborToolStripMenuItem
+            // 
+            this.nearestNeighborToolStripMenuItem.Name = "nearestNeighborToolStripMenuItem";
+            this.nearestNeighborToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.nearestNeighborToolStripMenuItem.Text = "NearestNeighbor";
+            this.nearestNeighborToolStripMenuItem.Click += new System.EventHandler(this.nearestNeighborToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -80,6 +89,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zondMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nearestNeighborToolStripMenuItem;
     }
 }
 
