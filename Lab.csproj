@@ -60,12 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extentions\BmpExtention.cs" />
+    <Compile Include="NearestNeighbor\MassObj.cs" />
     <Compile Include="NearestNeighbor\NearestNeighborForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NearestNeighbor\NearestNeighborForm.Designer.cs">
       <DependentUpon>NearestNeighborForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NearestNeighbor\GrayScaleOperations.cs" />
+    <Compile Include="NearestNeighbor\ShowMethods.cs" />
     <Compile Include="ZondMethod\ShowMetods\CommonMethods.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
