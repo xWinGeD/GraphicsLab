@@ -62,11 +62,8 @@ namespace Lab.ZondMethod.ShowMetods
                 
             }
             //TODO HARDCORE
-             
-             
-            
-
-            _count++;//для того чтобы записывать в новую строку
+           
+           _count++;//для того чтобы записывать в новую строку
         }
     }
 }

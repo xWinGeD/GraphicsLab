@@ -30,8 +30,9 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.RGBControl = new System.Windows.Forms.TabPage();
+            this.ToGrayBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ToGrayScaleBtn = new System.Windows.Forms.Button();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.OpenNewImageButton = new System.Windows.Forms.Button();
             this.OpenImagesButton = new System.Windows.Forms.Button();
@@ -112,7 +113,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.BinaryControl = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.RGBControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -182,9 +184,11 @@
             // 
             // RGBControl
             // 
-            this.RGBControl.Controls.Add(this.button2);
+            this.RGBControl.Controls.Add(this.label27);
+            this.RGBControl.Controls.Add(this.label26);
+            this.RGBControl.Controls.Add(this.ToGrayBtn);
             this.RGBControl.Controls.Add(this.dataGridView1);
-            this.RGBControl.Controls.Add(this.button1);
+            this.RGBControl.Controls.Add(this.ToGrayScaleBtn);
             this.RGBControl.Controls.Add(this.pictureBox26);
             this.RGBControl.Controls.Add(this.OpenNewImageButton);
             this.RGBControl.Controls.Add(this.OpenImagesButton);
@@ -197,6 +201,16 @@
             this.RGBControl.Text = "RGB";
             this.RGBControl.UseVisualStyleBackColor = true;
             // 
+            // ToGrayBtn
+            // 
+            this.ToGrayBtn.Location = new System.Drawing.Point(1076, 6);
+            this.ToGrayBtn.Name = "ToGrayBtn";
+            this.ToGrayBtn.Size = new System.Drawing.Size(75, 23);
+            this.ToGrayBtn.TabIndex = 11;
+            this.ToGrayBtn.Text = "ToGray";
+            this.ToGrayBtn.UseVisualStyleBackColor = true;
+            this.ToGrayBtn.Click += new System.EventHandler(this.ToGrayBtn_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -205,15 +219,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(1176, 177);
             this.dataGridView1.TabIndex = 10;
             // 
-            // button1
+            // ToGrayScaleBtn
             // 
-            this.button1.Location = new System.Drawing.Point(378, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "ToGrayScale";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ToGrayScaleBtn.Location = new System.Drawing.Point(378, 6);
+            this.ToGrayScaleBtn.Name = "ToGrayScaleBtn";
+            this.ToGrayScaleBtn.Size = new System.Drawing.Size(84, 23);
+            this.ToGrayScaleBtn.TabIndex = 9;
+            this.ToGrayScaleBtn.Text = "ToGrayScale";
+            this.ToGrayScaleBtn.UseVisualStyleBackColor = true;
+            this.ToGrayScaleBtn.Click += new System.EventHandler(this.ToGrayScaleBtn_Click);
             // 
             // pictureBox26
             // 
@@ -936,15 +950,23 @@
             this.BinaryControl.Text = "Binary";
             this.BinaryControl.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // label26
             // 
-            this.button2.Location = new System.Drawing.Point(1076, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "ToGray";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1099, 126);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(41, 13);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "label26";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(1099, 98);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(41, 13);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "label27";
             // 
             // NearestNeighborForm
             // 
@@ -957,6 +979,7 @@
             this.Text = "NearestNeighborForm";
             this.tabControl.ResumeLayout(false);
             this.RGBControl.ResumeLayout(false);
+            this.RGBControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1045,7 +1068,7 @@
         private System.Windows.Forms.TabPage RGBControl;
         private System.Windows.Forms.TabPage BinaryControl;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ToGrayScaleBtn;
         private System.Windows.Forms.PictureBox pictureBox26;
         private System.Windows.Forms.Button OpenNewImageButton;
         private System.Windows.Forms.Button OpenImagesButton;
@@ -1125,6 +1148,8 @@
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox25;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ToGrayBtn;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
     }
 }

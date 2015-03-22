@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extentions\BmpExtention.cs" />
+    <Compile Include="NearestNeighbor\ClassEnum.cs" />
     <Compile Include="NearestNeighbor\MassObj.cs" />
     <Compile Include="NearestNeighbor\NearestNeighborForm.cs">
       <SubType>Form</SubType>
