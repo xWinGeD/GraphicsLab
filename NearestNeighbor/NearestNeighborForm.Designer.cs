@@ -30,7 +30,8 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.RGBControl = new System.Windows.Forms.TabPage();
-            this.BinaryControl = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.OpenNewImageButton = new System.Windows.Forms.Button();
             this.OpenImagesButton = new System.Windows.Forms.Button();
@@ -110,10 +111,11 @@
             this.panel25 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BinaryControl = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.RGBControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -166,7 +168,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.panel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -181,6 +182,7 @@
             // 
             // RGBControl
             // 
+            this.RGBControl.Controls.Add(this.button2);
             this.RGBControl.Controls.Add(this.dataGridView1);
             this.RGBControl.Controls.Add(this.button1);
             this.RGBControl.Controls.Add(this.pictureBox26);
@@ -195,15 +197,23 @@
             this.RGBControl.Text = "RGB";
             this.RGBControl.UseVisualStyleBackColor = true;
             // 
-            // BinaryControl
+            // dataGridView1
             // 
-            this.BinaryControl.Location = new System.Drawing.Point(4, 22);
-            this.BinaryControl.Name = "BinaryControl";
-            this.BinaryControl.Padding = new System.Windows.Forms.Padding(3);
-            this.BinaryControl.Size = new System.Drawing.Size(1203, 403);
-            this.BinaryControl.TabIndex = 1;
-            this.BinaryControl.Text = "Binary";
-            this.BinaryControl.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 232);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1176, 177);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(378, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "ToGrayScale";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox26
             // 
@@ -916,23 +926,25 @@
             this.pictureBox25.TabIndex = 0;
             this.pictureBox25.TabStop = false;
             // 
-            // button1
+            // BinaryControl
             // 
-            this.button1.Location = new System.Drawing.Point(378, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "ToGrayScale";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BinaryControl.Location = new System.Drawing.Point(4, 22);
+            this.BinaryControl.Name = "BinaryControl";
+            this.BinaryControl.Padding = new System.Windows.Forms.Padding(3);
+            this.BinaryControl.Size = new System.Drawing.Size(1195, 426);
+            this.BinaryControl.TabIndex = 1;
+            this.BinaryControl.Text = "Binary";
+            this.BinaryControl.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // button2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 232);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1176, 177);
-            this.dataGridView1.TabIndex = 10;
+            this.button2.Location = new System.Drawing.Point(1076, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "ToGray";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // NearestNeighborForm
             // 
@@ -945,6 +957,7 @@
             this.Text = "NearestNeighborForm";
             this.tabControl.ResumeLayout(false);
             this.RGBControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1022,7 +1035,6 @@
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1113,5 +1125,6 @@
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -9,5 +9,8 @@ namespace Lab.NearestNeighbor
     public class MassObj
     {
         public double[,] Mass { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+
     }
 }

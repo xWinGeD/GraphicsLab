@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge.Imaging.Filters;
 
 namespace Lab.NearestNeighbor
 {
@@ -67,6 +68,16 @@ namespace Lab.NearestNeighbor
 
             _grayScaleList = pTask.Result;
           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var newImage = new MassObj();
+            newImage = GrayScaleOperations.ToGrayScale(_newMap);
+
+            var rMass = GrayScaleOperations.EuclideanDistance(_grayScaleList, newImage);
+            var Rsr = rMass.Max(t => t)/2;
+
         }
     }
 }

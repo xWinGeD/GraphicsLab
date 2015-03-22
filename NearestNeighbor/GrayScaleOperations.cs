@@ -48,7 +48,34 @@ namespace Lab.NearestNeighbor
 
 
 
-            return new MassObj {Mass = finalMass};
+            return new MassObj { Mass = finalMass,Height = map.Height,Width = map.Width };
+
+        }
+
+        public static double[] EuclideanDistance(MassObj[] massImages,MassObj image)
+        {
+            var rMass = new double[massImages.Length];
+
+            double R = 0,sum = 0;
+            
+            for (int i = 0; i < massImages.Length; i++)
+            {
+                MassObj temp = massImages[i];
+
+                for (int j = 0; j < temp.Height; j++)
+                {
+                    for (int k = 0; k < temp.Width; k++)
+                    {
+                        sum += Math.Pow((image.Mass[j,k] + temp.Mass[j, k]), 2);
+                    }
+                    
+                }
+
+                R = Math.Sqrt(sum);
+                rMass[i] = R;
+            }
+            
+            return rMass;
 
         }
 

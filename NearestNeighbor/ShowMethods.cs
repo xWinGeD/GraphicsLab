@@ -20,7 +20,7 @@ namespace Lab.NearestNeighbor
                 int i = 0;
                 string line = null;
 
-                while ((line = srReader.ReadLine()) != "")
+                while ((line = srReader.ReadLine()) != null)
                 {
                     imageMass[i] = (Bitmap)Image.FromFile(line);
                     boxes[i].Image = imageMass[i];
